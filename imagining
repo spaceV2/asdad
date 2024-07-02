@@ -196,6 +196,7 @@ end
 -------------------->> Anticheat Functions <<--------------------
 
 local CheatCheck = nil
+if getgc then
 	for i, v in pairs(getgc(true)) do
 		if typeof(v) == "function" then
 			CheatCheck = v
@@ -213,6 +214,7 @@ local CheatCheck = nil
 			GetSpawnTime = v.getRemainingDebounce
 		end
 	end
+end
 -- 
 if FH_DEBUG then
 	print("[FarmHub (DEBUG)]: Scanned GC successfully.")
@@ -303,6 +305,8 @@ local Modules                   = {
 	MilitaryTurret              = require(ReplicatedStorage.Game.MilitaryTurret.MilitaryTurret),
 	DefaultActions              = require(ReplicatedStorage.Game.DefaultActions),
 }
+
+print('ermmm')
 
 if FH_DEBUG then
 	print("[FarmHub (DEBUG)]: Loaded enviroment modules.")
