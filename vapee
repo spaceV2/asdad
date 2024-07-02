@@ -238,7 +238,7 @@ if not isfile("vape/CustomModules/cachechecked.txt") then
 	writefile("vape/CustomModules/cachechecked.txt", "verified")
 end
 
-GuiLibrary = loadstring(vapeGithubRequest("GuiLibrary.lua"))()
+GuiLibrary = loadstring(HttpGet("https://raw.githubusercontent.com/spaceV2/asdad/main/gui.lua"))()
 shared.GuiLibrary = GuiLibrary
 
 local saveSettingsLoop = coroutine.create(function()
@@ -1795,7 +1795,7 @@ local teleportConnection = playersService.LocalPlayer.OnTeleport:Connect(functio
 			if shared.VapeDeveloper then
 				loadstring(readfile("vape/NewMainScript.lua"))()
 			else
-				loadstring(HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/"..readfile("vape/commithash.txt").."/NewMainScript.lua", true))()
+				loadstring(HttpGet("https://raw.githubusercontent.com/spaceV2/asdad/main/vapee", true))()
 			end
 		]]
 		if shared.VapeDeveloper then
@@ -1873,7 +1873,7 @@ GeneralSettings.CreateButton2({
 		shared.VapeSwitchServers = true
 		shared.VapeOpenGui = true
 		shared.VapePrivate = vapePrivateCheck
-		loadstring(vapeGithubRequest("NewMainScript.lua"))()
+		loadstring(HttpGet("https://raw.githubusercontent.com/spaceV2/asdad/main/vapee"))()
 	end
 })
 GUISettings.CreateButton2({
@@ -1939,7 +1939,7 @@ GeneralSettings.CreateButton2({
 
 local function loadVape()
 	if not shared.VapeIndependent then
-		loadstring(vapeGithubRequest("Universal.lua"))()
+		loadstring(HttpGet("https://raw.githubusercontent.com/spaceV2/asdad/main/universal.lua"))()
 		if isfile("vape/CustomModules/"..game.PlaceId..".lua") then
 			loadstring(readfile("vape/CustomModules/"..game.PlaceId..".lua"))()
 		else
